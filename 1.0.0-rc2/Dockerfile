@@ -16,7 +16,11 @@ FROM debian:buster-slim
 
 ENV GRAAL_VERSION 1.0.0-rc2
 
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  zlib1g-dev \
+  curl \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt && curl -L https://github.com/oracle/graal/releases/download/vm-${GRAAL_VERSION}/graalvm-ce-${GRAAL_VERSION}-linux-amd64.tar.gz | tar -xz
 RUN ln -sf /opt/graalvm-ce-${GRAAL_VERSION} /opt/graal
