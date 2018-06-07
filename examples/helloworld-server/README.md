@@ -35,7 +35,7 @@ f8907debcf74    ...        /bin/sh -c #(nop)  ENTRYPOINT ["/app"]          0B
 ```
 
 ## Dealing with Reflection
-This example uses Gson to serialize POJO into JSON. When doing this, Gson uses reflection on the POJO to construct the JSON payload. When using Graal, all reflections must be explicitly configured in a [Relfection Configuration](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md). In this example, [relfection.json](graal/reflection.json) enables reflection on all fields and methods on the POJO `GreetingResponse`.
+This example uses Gson to serialize POJO into JSON. When doing this, Gson uses reflection on the POJO to construct the JSON payload. When using Graal, all reflections must be explicitly configured in a [Relfection Configuration](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md). In this example, [relfect.json](graal/reflect.json) enables reflection on all fields and methods on the POJO `GreetingResponse`.
 
 ## Ctrl+C?
 When running the JAR in JVM, I can Ctrl+C to stop the server. However, when running the statically linked binary, Ctrl+C seems broken. To stop the server, I needed to kill it explicitly:
