@@ -13,8 +13,10 @@ RUN native-image \
     -H:ReflectionConfigurationFiles=reflect.json \
     -H:+ReportUnsupportedElementsAtRuntime \
     --static \
+    -Dio.netty.availableProcessors=2 \
+    -Dio.netty.noPreferDirect=true \
+    -Dio.netty.noUnsafe=true \
     -jar grpc-server.jar
-
 
 #FROM gcr.io/distroless/cc
 FROM scratch
