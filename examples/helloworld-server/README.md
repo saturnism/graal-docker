@@ -12,7 +12,7 @@ $ curl localhost:5432/hello/Ray
 Graal (with Docker):
 ```
 $ docker build -t helloworld-server
-$ docker run -ti --rm helloworld-server -p 5432:5432 helloworld-server
+$ docker run -ti --rm -p 5432:5432 helloworld-server
 $ curl localhost:5432/hello/Ray
 ```
 
